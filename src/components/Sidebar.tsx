@@ -4,16 +4,42 @@ import { House, Star, UserCircle, Rainbow, Image as ImageIcon, Tag, Smiley, Curs
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../i18n/locales';
 
+/**
+ * 侧边栏组件
+ * 
+ * 页面位置：页面左侧，固定宽度 256px，不随页面滚动，有独立滚动条
+ * 
+ * 布局结构：
+ * ┌──────────────────┐
+ * │ 🏠 首页          │
+ * ├──────────────────┤
+ * │ 📦 素材分类       │
+ * │  ⭐ 图标         │
+ * │  👤 头像         │
+ * │  🌈 背景         │
+ * │  🖼️ 图片         │
+ * │  🏷️ Logo        │
+ * │  😊 表情         │
+ * │  🖱️ 光标         │
+ * │  🎨 插画         │
+ * ├──────────────────┤
+ * │ 📖 使用说明      │
+ * ├──────────────────┤
+ * │ 版权信息         │
+ * └──────────────────┘
+ */
 const Sidebar: React.FC = () => {
   const location = useLocation();
   const { language } = useTheme();
 
   const isActive = (path: string) => location.pathname === path;
 
+  // 主导航菜单项（首页）
   const primaryNav = [
     { to: '/', label: t('nav.home', language), Icon: House },
   ];
 
+  // 素材分类导航菜单项
   const assetNav = [
     { to: '/assets/icons', label: t('nav.icons', language), Icon: Star },
     { to: '/assets/avatars', label: t('nav.avatars', language), Icon: UserCircle },
@@ -25,19 +51,28 @@ const Sidebar: React.FC = () => {
     { to: '/assets/illustrations', label: t('nav.illustrations', language), Icon: PaintBrush },
   ];
 
+  // 支持导航菜单项（使用说明）
   const supportNav = [
     { to: '/usage', label: t('nav.usage', language), Icon: BookOpen },
   ];
 
   return (
+    // ========== 侧边栏容器 ==========
+    // 位置：页面左侧，固定宽度 256px，全高度，右侧边框分隔
+    // 布局：垂直布局，可滚动
     <div className="w-64 h-full bg-[var(--background-1)] border-r border-[var(--black-10)] flex flex-col overflow-y-auto">
+      {/* ========== 导航菜单内容区 ========== */}
+      {/* 位置：侧边栏顶部，占据主要空间 */}
       <div className="flex flex-col gap-4px px-12px py-16px">
+        {/* ========== 主导航区块 ========== */}
+        {/* 位置：侧边栏最顶部 */}
+        {/* 包含：首页链接 */}
         <nav className="flex flex-col gap-2px">
           {primaryNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className={`flex items-center gap-12px px-12px py-10px rounded-8px font-14 transition-all ${
+              className={`flex items-center gap-8px px-12px py-10px rounded-8px font-14 p-4px transition-all ${
                 isActive(item.to)
                   ? 'bg-[var(--black-4)] text-[var(--foreground)] font-semibold'
                   : 'text-[var(--black-80)] hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
@@ -49,16 +84,21 @@ const Sidebar: React.FC = () => {
           ))}
         </nav>
 
+        {/* ========== 素材分类区块 ========== */}
+        {/* 位置：主导航下方，有分隔线 */}
+        {/* 包含：分类标题 + 所有素材分类链接（图标、头像、背景等） */}
         <div className="pt-16px mt-8px border-t border-[var(--black-10)]">
+          {/* 分类区块标题 */}
           <span className="px-12px font-12 font-semibold text-[var(--black-40)] uppercase tracking-wider block mb-8px">
             {t('nav.categories', language)}
           </span>
-          <nav className="flex flex-col gap-2px">
+          {/* 素材分类导航菜单 */}
+          <nav className="flex flex-col gap-4px">
             {assetNav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-12px px-12px py-10px rounded-8px font-14 transition-all ${
+                className={`flex items-center gap-8px px-12px py-10px rounded-8px font-14 p-4px transition-all ${
                   isActive(item.to)
                     ? 'bg-[var(--black-4)] text-[var(--foreground)] font-semibold'
                     : 'text-[var(--black-80)] hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
@@ -71,13 +111,16 @@ const Sidebar: React.FC = () => {
           </nav>
         </div>
 
+        {/* ========== 支持导航区块 ========== */}
+        {/* 位置：素材分类下方，有分隔线 */}
+        {/* 包含：使用说明链接 */}
         <div className="pt-16px mt-8px border-t border-[var(--black-10)]">
           <nav className="flex flex-col gap-2px">
             {supportNav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-12px px-12px py-10px rounded-8px font-14 transition-all ${
+                className={`flex items-center gap-8px px-12px py-10px rounded-8px p-4px font-14 transition-all ${
                   isActive(item.to)
                     ? 'bg-[var(--black-4)] text-[var(--foreground)] font-semibold'
                     : 'text-[var(--black-80)] hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
@@ -91,6 +134,9 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
+      {/* ========== 底部版权信息区块 ========== */}
+      {/* 位置：侧边栏底部，自动推到底部（mt-auto） */}
+      {/* 包含：版权信息文字 */}
       <div className="mt-auto px-12px py-16px border-t border-[var(--black-10)]">
         <p className="font-12 text-[var(--black-40)] text-center">{t('copyright', language)}</p>
       </div>

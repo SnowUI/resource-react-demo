@@ -3,23 +3,56 @@ import { AvatarByewind, FourLeafClover, Gradient01, Image01, SnowIcon, WinkingFa
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../i18n/locales';
 
+/**
+ * 首页组件
+ * 
+ * 页面位置：主内容区，路由为 "/"
+ * 
+ * 布局结构：
+ * ┌─────────────────────────────────────┐
+ * │ 页面标题                              │
+ * │ 页面副标题                            │
+ * ├─────────────────────────────────────┤
+ * │ ┌─────┐ ┌─────┐ ┌─────┐            │
+ * │ │图标 │ │头像 │ │背景 │            │
+ * │ └─────┘ └─────┘ └─────┘            │
+ * │ ┌─────┐ ┌─────┐ ┌─────┐            │
+ * │ │图片 │ │Logo │ │表情 │            │
+ * │ └─────┘ └─────┘ └─────┘            │
+ * └─────────────────────────────────────┘
+ */
 const Home: React.FC = () => {
   const { language } = useTheme();
 
   return (
+    // ========== 页面容器 ==========
+    // 位置：主内容区，内边距 40px
     <div className="flex-1 p-40px">
+      {/* ========== 内容区域 ========== */}
+      {/* 最大宽度 1200px，居中显示 */}
       <div className="max-w-1200px mx-auto">
+        {/* ========== 页面标题区块 ========== */}
+        {/* 位置：页面顶部 */}
+        {/* 包含：主标题、副标题 */}
         <div className="mb-40px">
+          {/* 主标题 */}
           <h1 className="font-48 font-semibold text-[var(--foreground)] mb-16px">
             {t('home.title', language)}
           </h1>
+          {/* 副标题 */}
           <p className="font-18 text-[var(--black-40)]">
             {t('home.subtitle', language)}
           </p>
         </div>
 
+        {/* ========== 素材展示网格区块 ========== */}
+        {/* 位置：标题下方 */}
+        {/* 布局：响应式网格，移动端 1 列，中等屏幕 2 列，大屏幕 3 列 */}
+        {/* 包含：6 个素材分类卡片（图标、头像、背景、图片、Logo、表情） */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24px">
-          {/* Icons */}
+          {/* ========== 图标分类卡片 ========== */}
+          {/* 位置：网格第一行第一列 */}
+          {/* 展示：FourLeafClover 图标示例 */}
           <div className="p-24px rounded-16px bg-[var(--background-2)] border border-[var(--black-10)]">
             <h2 className="font-24 font-semibold text-[var(--foreground)] mb-16px">
               {t('home.icons', language)}
@@ -29,7 +62,9 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Avatars */}
+          {/* ========== 头像分类卡片 ========== */}
+          {/* 位置：网格第一行第二列 */}
+          {/* 展示：AvatarByewind 头像示例 */}
           <div className="p-24px rounded-16px bg-[var(--background-2)] border border-[var(--black-10)]">
             <h2 className="font-24 font-semibold text-[var(--foreground)] mb-16px">
               {t('home.avatars', language)}
@@ -39,7 +74,9 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Backgrounds */}
+          {/* ========== 背景分类卡片 ========== */}
+          {/* 位置：网格第一行第三列 */}
+          {/* 展示：Gradient01 背景示例 */}
           <div className="p-24px rounded-16px bg-[var(--background-2)] border border-[var(--black-10)]">
             <h2 className="font-24 font-semibold text-[var(--foreground)] mb-16px">
               {t('home.backgrounds', language)}
@@ -49,7 +86,9 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Images */}
+          {/* ========== 图片分类卡片 ========== */}
+          {/* 位置：网格第二行第一列 */}
+          {/* 展示：Image01 图片示例 */}
           <div className="p-24px rounded-16px bg-[var(--background-2)] border border-[var(--black-10)]">
             <h2 className="font-24 font-semibold text-[var(--foreground)] mb-16px">
               {t('home.images', language)}
@@ -59,7 +98,9 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Logos */}
+          {/* ========== Logo 分类卡片 ========== */}
+          {/* 位置：网格第二行第二列 */}
+          {/* 展示：SnowIcon Logo 示例 */}
           <div className="p-24px rounded-16px bg-[var(--background-2)] border border-[var(--black-10)]">
             <h2 className="font-24 font-semibold text-[var(--foreground)] mb-16px">
               {t('home.logos', language)}
@@ -69,7 +110,9 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Emoji */}
+          {/* ========== 表情分类卡片 ========== */}
+          {/* 位置：网格第二行第三列 */}
+          {/* 展示：WinkingFace 表情示例 */}
           <div className="p-24px rounded-16px bg-[var(--background-2)] border border-[var(--black-10)]">
             <h2 className="font-24 font-semibold text-[var(--foreground)] mb-16px">
               {t('home.emoji', language)}
