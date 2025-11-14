@@ -5,7 +5,7 @@
   "homepage": "/example",
   "scripts": {
     "start": "craco start",
-    "build": "BUILD_PATH=docs craco build",
+    "build": "BUILD_PATH=docs craco build && cp docs/index.html docs/404.html",
     "dev": "craco start"
   },
   "dependencies": {
