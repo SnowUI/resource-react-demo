@@ -1,0 +1,10 @@
+/* 导入 Tailwind CSS v4 */
+/* 先导入 snowui.css（包含 @theme 定义）*/
+@import '../../design-system/src/snowui.css';
+@import "tailwindcss";
+
+/* 告诉 Tailwind v4 要扫描哪些文件（路径相对于项目根目录） */
+@source "./src/**/*.{js,jsx,ts,tsx}";
+
+/* 其他自定义样式 */
+
