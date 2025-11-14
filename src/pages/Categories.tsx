@@ -21,9 +21,11 @@ type CategoryKey = 'icons' | 'avatars' | 'backgrounds' | 'images' | 'logos' | 'e
 const createAssetItemsFromNames = (names: readonly string[]): AssetItem[] => {
   return names
     .map((name) => {
-      const Component = (AllComponents as unknown as Record<string, AssetComponent>)[name];
+      // 确保 name 是字符串，防止构建时被处理
+      const nameStr = String(name);
+      const Component = (AllComponents as unknown as Record<string, AssetComponent>)[nameStr];
       if (!Component) return null;
-      return { name, Component };
+      return { name: nameStr, Component };
     })
     .filter((item): item is AssetItem => item !== null)
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -158,7 +160,7 @@ const Categories: React.FC = () => {
                 {renderAsset(item)}
               </div>
               <span className="font-12 text-[var(--black-60)] text-center break-all group-hover:text-[var(--foreground)] transition-colors">
-                {item.name}
+                {String(item.name)}
               </span>
             </div>
           ))}
