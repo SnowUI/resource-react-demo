@@ -2,9 +2,10 @@
   "name": "@snowui/example",
   "version": "1.0.0",
   "private": true,
+  "homepage": "/example",
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "BUILD_PATH=docs craco build",
     "dev": "craco start"
   },
   "dependencies": {

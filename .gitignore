@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# production
+# /build  # 注释掉，因为我们现在使用 docs 文件夹
+# /docs  # 取消注释以提交 docs 文件夹到 GitHub（GitHub Pages 需要）
+
 # misc
 .DS_Store
 .env.local
