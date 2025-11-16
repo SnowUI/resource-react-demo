@@ -290,7 +290,7 @@ const Categories: React.FC = () => {
         {/* 显示条件：总页数大于 1 时显示 */}
         {/* 包含：上一页按钮、当前页/总页数、下一页按钮 */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-12px mt-32px">
+          <div className="flex items-center justify-center gap-12px mt-48px mb-24px">
             {/* 上一页按钮 */}
             <button
               onClick={() => setPage((prev) => Math.max(1, prev - 1))}
