@@ -17,6 +17,18 @@ interface AssetItem {
 
 type CategoryKey = 'icons' | 'avatars' | 'backgrounds' | 'images' | 'logos' | 'emoji' | 'cursors' | 'illustrations';
 
+// Figma 预览链接映射
+const FIGMA_LINKS: Record<CategoryKey, string> = {
+  cursors: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=25596-105674',
+  icons: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=25596-105748',
+  avatars: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=25596-105749',
+  logos: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=25596-105750',
+  emoji: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=25596-105751',
+  illustrations: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=25596-105752',
+  backgrounds: 'https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI?node-id=321819-123089',
+  images: '', // images 没有提供链接
+};
+
 // 使用自动生成的组件名称映射来创建 AssetItem 数组
 const createAssetItemsFromNames = (names: readonly string[]): AssetItem[] => {
   return names
@@ -101,6 +113,59 @@ const Categories: React.FC = () => {
     return parts.join(' · ');
   }, [categoryKey, items.length, language]);
 
+  const renderInfoText = () => {
+    const figmaLink = FIGMA_LINKS[categoryKey];
+    const hasFigmaLink = figmaLink && figmaLink.length > 0;
+    
+    if (categoryKey === 'icons') {
+      return (
+        <p className="font-12 text-[var(--black-40)]">
+          {infoText} · {t('categories.icons.includes', language)}{' '}
+          <a
+            href="https://phosphoricons.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--primary)] hover:underline"
+          >
+            {t('categories.icons.phosphor', language)}
+          </a>
+          {hasFigmaLink && (
+            <>
+              {' · '}
+              <a
+                href={figmaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--primary)] hover:underline"
+              >
+                {t('categories.figma.preview', language)}
+              </a>
+            </>
+          )}
+        </p>
+      );
+    }
+    
+    return (
+      <p className="font-12 text-[var(--black-40)]">
+        {infoText}
+        {hasFigmaLink && (
+          <>
+            {' · '}
+            <a
+              href={figmaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--primary)] hover:underline"
+            >
+              {t('categories.figma.preview', language)}
+            </a>
+          </>
+        )}
+      </p>
+    );
+  };
+
   const renderAsset = (item: AssetItem) => {
     switch (categoryKey) {
       case 'icons':
@@ -162,7 +227,7 @@ const Categories: React.FC = () => {
             {t(`categories.${categoryKey}`, language)}
           </h1>
           {/* 信息说明文字（显示素材数量和尺寸说明） */}
-          <p className="font-12 text-[var(--black-40)]">{infoText}</p>
+          {renderInfoText()}
         </div>
 
         {/* ========== 素材网格展示区块 ========== */}

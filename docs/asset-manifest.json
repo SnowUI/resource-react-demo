@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/example/static/css/main.383891d2.css",
-    "main.js": "/example/static/js/main.e6549e11.js",
+    "main.js": "/example/static/js/main.4bd33543.js",
     "static/media/illustration-28-640.png": "/example/static/media/illustration-28-640.69cb3855a67c794ba8ab.png",
     "static/media/illustration-22-640.png": "/example/static/media/illustration-22-640.6ddb57f94f22d25118d2.png",
     "static/media/illustration-26-640.png": "/example/static/media/illustration-26-640.10d8d84de396ebf43246.png",
@@ -279,7 +279,6 @@
     "static/media/gemini.svg": "/example/static/media/gemini.9e68f3d175d1b21895d854489d1504b0.svg",
     "static/media/perplexity.svg": "/example/static/media/perplexity.6ad7906e9908e3fe4ecacd8ef383799c.svg",
     "static/media/cursors-default.svg": "/example/static/media/cursors-default.4cdc85a684e54140444b072cd2aa7067.svg",
-    "index.html": "/example/index.html",
     "static/media/figma-a.svg": "/example/static/media/figma-a.ae836d320ea97d2dc9d032c2fb46d5ad.svg",
     "static/media/cursors-cross.svg": "/example/static/media/cursors-cross.861a3973306ebafc7257bc6fd84e3d40.svg",
     "static/media/grok.svg": "/example/static/media/grok.6886236d011c89f04da4fe419128e163.svg",
@@ -287,6 +286,7 @@
     "static/media/lemon-squeezy.svg": "/example/static/media/lemon-squeezy.57c3bfe5fc9b1b478d0a52784c49581a.svg",
     "static/media/cursors-zoom-out.svg": "/example/static/media/cursors-zoom-out.b6346366cd88641d090321701ce7e3c8.svg",
     "static/media/youtube.svg": "/example/static/media/youtube.a19cf9660ec889a41d29fb45b206971b.svg",
+    "index.html": "/example/index.html",
     "static/media/linked-in.svg": "/example/static/media/linked-in.ecf608bc26a93828cc939e5f66ca52c9.svg",
     "static/media/apple.svg": "/example/static/media/apple.60a6e9840e4624c3882543c1732e3d9d.svg",
     "static/media/google-play.svg": "/example/static/media/google-play.d444aeda9d19682a28817a9e04af4082.svg",
@@ -301,10 +301,10 @@
     "static/media/microsoft.svg": "/example/static/media/microsoft.417961fec83270c07354747137a00fc3.svg",
     "static/media/xlogo.svg": "/example/static/media/xlogo.8321dec92a6124814025efcb6290e1c7.svg",
     "main.383891d2.css.map": "/example/static/css/main.383891d2.css.map",
-    "main.e6549e11.js.map": "/example/static/js/main.e6549e11.js.map"
+    "main.4bd33543.js.map": "/example/static/js/main.4bd33543.js.map"
   },
   "entrypoints": [
     "static/css/main.383891d2.css",
-    "static/js/main.e6549e11.js"
+    "static/js/main.4bd33543.js"
   ]
 }

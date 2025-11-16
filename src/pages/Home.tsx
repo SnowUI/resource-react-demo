@@ -39,9 +39,16 @@ const Home: React.FC = () => {
           <h1 className="font-24 font-semibold text-[var(--foreground)] mb-8px">
             {t('home.title', language)}
           </h1>
-          {/* 副标题 */}
+          {/* Figma 预览链接 */}
           <p className="font-14 text-[var(--black-40)]">
-            {t('home.subtitle', language)}
+            <a
+              href="https://www.figma.com/design/PAA0JKidFMVK44KRRWB1zL/SnowUI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--primary)] hover:underline"
+            >
+              {t('home.figma.preview', language)}
+            </a>
           </p>
         </div>
 
