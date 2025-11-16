@@ -70,6 +70,30 @@ const Usage: React.FC = () => {
                 pnpm add @snowui-design-system/resource-react
               </code>
             </div>
+            {/* GitHub 仓库链接 */}
+            <div className="mt-16px">
+              <p className="font-14 text-[var(--foreground)] mb-8px">
+                {t('usage.install.github', language)}
+              </p>
+              <div className="flex flex-col gap-8px">
+                <a
+                  href="https://github.com/snowui/resource-core"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-14 text-[var(--primary)] hover:underline"
+                >
+                  • resource-core - https://github.com/snowui/resource-core
+                </a>
+                <a
+                  href="https://github.com/snowui/resource-react"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-14 text-[var(--primary)] hover:underline"
+                >
+                  • resource-react - https://github.com/snowui/resource-react
+                </a>
+              </div>
+            </div>
           </section>
 
           {/* ========== 导入说明区块 ========== */}

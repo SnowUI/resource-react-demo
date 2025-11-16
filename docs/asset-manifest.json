@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/example/static/css/main.c0313abe.css",
-    "main.js": "/example/static/js/main.1f0e5037.js",
+    "main.css": "/example/static/css/main.383891d2.css",
+    "main.js": "/example/static/js/main.e6549e11.js",
     "static/media/illustration-28-640.png": "/example/static/media/illustration-28-640.69cb3855a67c794ba8ab.png",
     "static/media/illustration-22-640.png": "/example/static/media/illustration-22-640.6ddb57f94f22d25118d2.png",
     "static/media/illustration-26-640.png": "/example/static/media/illustration-26-640.10d8d84de396ebf43246.png",
@@ -16,6 +16,7 @@
     "static/media/illustration-23-640.png": "/example/static/media/illustration-23-640.ed2f3b5bf0e109d3bd08.png",
     "static/media/illustration-05-640.png": "/example/static/media/illustration-05-640.96001c057e65bfcb2b0d.png",
     "static/media/illustration-17-640.png": "/example/static/media/illustration-17-640.f88a4770da469e5cd0cb.png",
+    "static/media/snowflake-emoji.svg": "/example/static/media/snowflake-emoji.23d3379fc035faf24ac94bc2ced05993.svg",
     "static/media/illustration-09-640.png": "/example/static/media/illustration-09-640.1c004f7b5c03ad77797d.png",
     "static/media/illustration-03-640.png": "/example/static/media/illustration-03-640.27c941ee72f9baf2fe17.png",
     "static/media/illustration-22-1024.png": "/example/static/media/illustration-22-1024.c31e77d0028aad5f171c.png",
@@ -154,6 +155,7 @@
     "static/media/illustration-24-160.png": "/example/static/media/illustration-24-160.98f4b6f8151455556561.png",
     "static/media/avatar-abstract-03-256.jpg": "/example/static/media/avatar-abstract-03-256.e1634090796e37942ad2.jpg",
     "static/media/geometric-05-1920.jpg": "/example/static/media/geometric-05-1920.5fd56f5c9498686f1245.jpg",
+    "static/media/umbrella-emoji.svg": "/example/static/media/umbrella-emoji.dc554aa31562d2f5831ead4ba173bc9b.svg",
     "static/media/illustration-05-160.png": "/example/static/media/illustration-05-160.a1960e656325ed90947f.png",
     "static/media/minimal-03-1920.jpg": "/example/static/media/minimal-03-1920.3e8fa04e972c12c3ef2d.jpg",
     "static/media/illustration-09-160.png": "/example/static/media/illustration-09-160.ce087a50b3fa7d3d9dbd.png",
@@ -209,6 +211,7 @@
     "static/media/image-01-1024.png": "/example/static/media/image-01-1024.858ea7b97722cae6ab12.png",
     "static/media/avatar-3d-03-256.jpg": "/example/static/media/avatar-3d-03-256.0e5fac5757132778ddfd.jpg",
     "static/media/minimal-01-1024.jpg": "/example/static/media/minimal-01-1024.f26cb94bc33b5cf67db0.jpg",
+    "static/media/robot-emoji.svg": "/example/static/media/robot-emoji.f5bba8401745c43b065dc78dc6fab4ed.svg",
     "static/media/winking-face-tongue.svg": "/example/static/media/winking-face-tongue.29a66a71c8ce7bbe5e1014841e5347cd.svg",
     "static/media/loudly-crying-face.svg": "/example/static/media/loudly-crying-face.ac7e9bc5cb959db449f4227565608a1e.svg",
     "static/media/snapchat.svg": "/example/static/media/snapchat.89ade99ef1d569bde394c0e6dbfc672d.svg",
@@ -289,6 +292,7 @@
     "static/media/google-play.svg": "/example/static/media/google-play.d444aeda9d19682a28817a9e04af4082.svg",
     "static/media/mastercard.svg": "/example/static/media/mastercard.ffbbf4d7f41ab4056f3f93263ac523a7.svg",
     "static/media/dropbox.svg": "/example/static/media/dropbox.282be16a474b4f50810b651eb1715113.svg",
+    "static/media/rss-logo.svg": "/example/static/media/rss-logo.e9aff8123e0e5e2e3164757cdc4e821e.svg",
     "static/media/medium.svg": "/example/static/media/medium.f5559c563430f1accff32505df7bce27.svg",
     "static/media/claude.svg": "/example/static/media/claude.fa752be4d96254eca599b34926d6651c.svg",
     "static/media/facebook.svg": "/example/static/media/facebook.5da6776e3bf07e385bba1e7363cf585a.svg",
@@ -296,11 +300,11 @@
     "static/media/twitch.svg": "/example/static/media/twitch.a3911c51b1da36214783e2394bcf29bb.svg",
     "static/media/microsoft.svg": "/example/static/media/microsoft.417961fec83270c07354747137a00fc3.svg",
     "static/media/xlogo.svg": "/example/static/media/xlogo.8321dec92a6124814025efcb6290e1c7.svg",
-    "main.c0313abe.css.map": "/example/static/css/main.c0313abe.css.map",
-    "main.1f0e5037.js.map": "/example/static/js/main.1f0e5037.js.map"
+    "main.383891d2.css.map": "/example/static/css/main.383891d2.css.map",
+    "main.e6549e11.js.map": "/example/static/js/main.e6549e11.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0313abe.css",
-    "static/js/main.1f0e5037.js"
+    "static/css/main.383891d2.css",
+    "static/js/main.e6549e11.js"
   ]
 }
