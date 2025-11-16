@@ -13,6 +13,7 @@ type AssetComponent = React.ComponentType<any>;
 interface AssetItem {
   name: string;
   Component: AssetComponent;
+  originalName: string; // 原始名称，用于显示
 }
 
 type CategoryKey = 'icons' | 'avatars' | 'backgrounds' | 'images' | 'logos' | 'emoji' | 'cursors' | 'illustrations';
@@ -29,6 +30,22 @@ const FIGMA_LINKS: Record<CategoryKey, string> = {
   images: '', // images 没有提供链接
 };
 
+// 将 PascalCase 转换为 kebab-case
+function pascalToKebab(str: string): string {
+  return str
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2') // 在小写字母/数字和大写字母之间插入连字符
+    .replace(/([A-Z])([A-Z][a-z])/g, '$1-$2') // 在连续大写字母之间插入连字符
+    .toLowerCase();
+}
+
+// 将 kebab-case 转换为 PascalCase
+function kebabToPascal(str: string): string {
+  return str
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join('');
+}
+
 // 使用自动生成的组件名称映射来创建 AssetItem 数组
 const createAssetItemsFromNames = (names: readonly string[]): AssetItem[] => {
   return names
@@ -37,10 +54,12 @@ const createAssetItemsFromNames = (names: readonly string[]): AssetItem[] => {
       const nameStr = String(name);
       const Component = (AllComponents as unknown as Record<string, AssetComponent>)[nameStr];
       if (!Component) return null;
-      return { name: nameStr, Component };
+      // 将 PascalCase 组件名称转换为 kebab-case 原始名称
+      const originalName = pascalToKebab(nameStr);
+      return { name: nameStr, Component, originalName };
     })
-    .filter((item): item is AssetItem => item !== null)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .filter((item): item is NonNullable<typeof item> => item !== null)
+    .sort((a, b) => a.originalName.localeCompare(b.originalName));
 };
 
 // 定义所有素材组件（使用自动生成的名称映射）
@@ -52,9 +71,18 @@ const emojiItems = createAssetItemsFromNames(componentNames.emoji);
 const cursorItems = createAssetItemsFromNames(componentNames.cursors);
 const illustrationItems = createAssetItemsFromNames(componentNames.illustrations);
 
+// 图标项：从 icons 对象（kebab-case key）创建，显示名称使用 PascalCase
 const iconItems: AssetItem[] = Object.entries(icons as Record<string, AssetComponent>)
-  .map(([name, Component]) => ({ name, Component }))
-  .sort((a, b) => a.name.localeCompare(b.name));
+  .map(([kebabName, Component]) => {
+    // 将 kebab-case 转换为 PascalCase 作为显示名称（组件名称）
+    const pascalName = kebabToPascal(kebabName);
+    return { 
+      name: pascalName,  // 显示名称：PascalCase（如 "FourLeafClover"）
+      Component, 
+      originalName: pascalName, // 图标使用 PascalCase 作为原始名称
+    };
+  })
+  .sort((a, b) => a.originalName.localeCompare(b.originalName));
 
 const CATEGORY_ITEMS: Record<CategoryKey, AssetItem[]> = {
   icons: iconItems,
@@ -251,7 +279,7 @@ const Categories: React.FC = () => {
               {/* 素材名称文字 */}
               {/* 悬停时文字颜色变化 */}
               <span className="font-12 text-[var(--black-40)] text-center break-all group-hover:text-[var(--foreground)] transition-colors">
-                {String(item.name)}
+                {item.name}
               </span>
             </div>
           ))}
