@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/resource-demo-react/', // GitHub Pages 基础路径
+  base: './', // 使用相对路径，确保任意子路径部署都能加载资源
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
