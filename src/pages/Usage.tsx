@@ -77,20 +77,12 @@ const Usage: React.FC = () => {
               </p>
               <div className="flex flex-col gap-8px">
                 <a
-                  href="https://github.com/snowui/resource-core"
+                  href="https://github.com/SnowUI/resource-base"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-14 text-[var(--primary)] hover:underline"
                 >
-                  • resource-core - https://github.com/snowui/resource-core
-                </a>
-                <a
-                  href="https://github.com/snowui/resource-react"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-14 text-[var(--primary)] hover:underline"
-                >
-                  • resource-react - https://github.com/snowui/resource-react
+                  • resource-base - https://github.com/SnowUI/resource-base
                 </a>
               </div>
             </div>
@@ -181,13 +173,13 @@ const Usage: React.FC = () => {
               <code className="font-14 text-[var(--foreground)] font-mono whitespace-pre">
 {`// Option 1: CDN in HTML (Recommended)
 <link rel="stylesheet" 
-  href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css">
+  href="https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css">
 
 // Option 2: In your CSS file
-@import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css';
+@import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';
 
 // Option 3: In JavaScript/TypeScript
-import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css';`}
+import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';`}
               </code>
             </div>
           </section>
