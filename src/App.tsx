@@ -27,7 +27,7 @@ function App() {
   // GitHub Pages basename 配置
   // Vite 会自动从 vite.config.ts 中的 base 配置读取
   // import.meta.BASE_URL 会自动包含尾随斜杠，需要移除
-  const basename = import.meta.BASE_URL?.replace(/\/$/, '') || '/example';
+  const basename = import.meta.BASE_URL?.replace(/\/$/, '') || '/resource-demo-react';
 
   return (
     <ThemeProvider>

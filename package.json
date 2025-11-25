@@ -2,7 +2,7 @@
   "name": "@snowui/example-react",
   "version": "1.0.0",
   "private": true,
-  "homepage": "/example",
+  "homepage": "/resource-demo-react",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build && cp docs/index.html docs/404.html || true",
@@ -11,7 +11,7 @@
     "start": "vite"
   },
   "dependencies": {
-    "@snowui-design-system/resource-react": "^1.0.22",
+    "@snowui-design-system/resource-react": "^1.0.23",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^6.28.0",

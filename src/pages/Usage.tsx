@@ -181,13 +181,13 @@ const Usage: React.FC = () => {
               <code className="font-14 text-[var(--foreground)] font-mono whitespace-pre">
 {`// Option 1: CDN in HTML (Recommended)
 <link rel="stylesheet" 
-  href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css">
+  href="https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css">
 
 // Option 2: In your CSS file
-@import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css';
+@import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css';
 
 // Option 3: In JavaScript/TypeScript
-import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/src/snowui.css';`}
+import 'https://cdn.jsdelivr.net/gh/snowui/home@main/design-system/snowui.css';`}
               </code>
             </div>
           </section>
