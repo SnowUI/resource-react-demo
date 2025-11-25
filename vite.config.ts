@@ -3,9 +3,11 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
+const basePath = '/resource-react-demo/'
+
 export default defineConfig({
   plugins: [react()],
-  base: './', // 使用相对路径，确保任意子路径部署都能加载资源
+  base: basePath,
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
