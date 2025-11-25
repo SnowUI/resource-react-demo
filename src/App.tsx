@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
@@ -24,14 +24,9 @@ import Usage from './pages/Usage';
  * └──────────┴──────────────────────────────┘
  */
 function App() {
-  // GitHub Pages basename 配置
-  // Vite 会自动从 vite.config.ts 中的 base 配置读取
-  // import.meta.BASE_URL 会自动包含尾随斜杠，需要移除
-  const basename = import.meta.BASE_URL?.replace(/\/$/, '') || '/resource-demo-react';
-
   return (
     <ThemeProvider>
-      <Router basename={basename}>
+      <Router>
         {/* 页面根容器：垂直布局，固定高度为屏幕高度，防止整体页面滚动 */}
         <div className="flex flex-col h-screen bg-[var(--background-1)] overflow-hidden">
           {/* ========== 顶部栏区块 ========== */}
