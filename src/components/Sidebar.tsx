@@ -94,23 +94,23 @@ const Sidebar: React.FC = () => {
     // 布局：垂直布局，可滚动，固定定位不随页面滚动
     <div 
       ref={sidebarRef}
-      className={`w-48 h-full bg-[var(--background-1)] flex flex-col overflow-y-auto sidebar-scroll ${isScrolling ? 'sidebar-scrolling' : ''}`}
+      className={`w-48 h-full bg-background-1 flex flex-col overflow-y-auto sidebar-scroll ${isScrolling ? 'sidebar-scrolling' : ''}`}
     >
       {/* ========== 导航菜单内容区 ========== */}
       {/* 位置：侧边栏顶部，占据主要空间 */}
-      <div className="flex flex-col gap-4px px-12px py-16px">
+      <div className="flex flex-col gap-1 px-3 py-4">
         {/* ========== 主导航区块 ========== */}
         {/* 位置：侧边栏最顶部 */}
         {/* 包含：首页链接 */}
-        <nav className="flex flex-col gap-2px">
+        <nav className="flex flex-col gap-0.5">
           {primaryNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className={`flex items-center gap-8px px-12px py-10px rounded-8px font-14 p-4px transition-all ${
+              className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm leading-5 p-1 transition-all ${
                 isActive(item.to)
-                  ? 'bg-[var(--black-4)] text-[var(--foreground)] font-semibold'
-                  : 'text-[var(--black-80)] hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
+                  ? 'bg-black-4 text-foreground font-semibold'
+                  : 'text-black-80 hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
               }`}
             >
               <item.Icon size={20} weight={isActive(item.to) ? 'bold' : 'regular'} className="flex-shrink-0" />
@@ -124,15 +124,15 @@ const Sidebar: React.FC = () => {
         {/* 包含：分类标题 + 所有素材分类链接（图标、头像、背景等） */}
         <div>
           {/* 素材分类导航菜单 */}
-          <nav className="flex flex-col gap-4px">
+          <nav className="flex flex-col gap-1">
             {assetNav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-8px px-12px py-10px rounded-8px font-14 p-4px transition-all ${
+                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm leading-5 p-1 transition-all ${
                   isActive(item.to)
-                    ? 'bg-[var(--black-4)] text-[var(--foreground)] font-semibold'
-                    : 'text-[var(--black-80)] hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
+                    ? 'bg-black-4 text-foreground font-semibold'
+                    : 'text-black-80 hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
                 }`}
               >
                 <item.Icon size={20} weight={isActive(item.to) ? 'bold' : 'regular'} className="flex-shrink-0" />
@@ -145,16 +145,16 @@ const Sidebar: React.FC = () => {
         {/* ========== 支持导航区块 ========== */}
         {/* 位置：素材分类下方，有分隔线 */}
         {/* 包含：使用说明链接 */}
-        <div className="pt-16px mt-8px border-t border-[var(--black-10)]">
-          <nav className="flex flex-col gap-2px">
+        <div className="pt-4 mt-2 border-t border-black-10">
+          <nav className="flex flex-col gap-0.5">
             {supportNav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex items-center gap-8px px-12px py-10px rounded-8px p-4px font-14 transition-all ${
+                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg p-1 text-sm leading-5 transition-all ${
                   isActive(item.to)
-                    ? 'bg-[var(--black-4)] text-[var(--foreground)] font-semibold'
-                    : 'text-[var(--black-80)] hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
+                    ? 'bg-black-4 text-foreground font-semibold'
+                    : 'text-black-80 hover:bg-[var(--background-2)] hover:text-[var(--foreground)]'
                 }`}
               >
                 <item.Icon size={20} weight={isActive(item.to) ? 'bold' : 'regular'} className="flex-shrink-0" />
@@ -168,8 +168,8 @@ const Sidebar: React.FC = () => {
       {/* ========== 底部版权信息区块 ========== */}
       {/* 位置：侧边栏底部，自动推到底部（mt-auto） */}
       {/* 包含：版权信息文字 */}
-      <div className="mt-auto px-20px py-8px">
-        <p className="font-12 text-[var(--black-40)] text-left">{t('copyright', language)}</p>
+      <div className="mt-auto px-5 py-2">
+        <p className="text-xs leading-4 text-black-40 text-left">{t('copyright', language)}</p>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ function App() {
     <ThemeProvider>
       <Router>
         {/* 页面根容器：垂直布局，固定高度为屏幕高度，防止整体页面滚动 */}
-        <div className="flex flex-col h-screen bg-[var(--background-1)] overflow-hidden">
+        <div className="flex flex-col h-screen bg-background-1 overflow-hidden">
           {/* ========== 顶部栏区块 ========== */}
           {/* 位置：页面最顶部，固定定位 */}
           {/* 包含：Logo、网站标题、主题切换、语言切换 */}
