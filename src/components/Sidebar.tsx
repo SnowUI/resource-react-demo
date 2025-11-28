@@ -94,7 +94,7 @@ const Sidebar: React.FC = () => {
     // 布局：垂直布局，可滚动，固定定位不随页面滚动
     <div 
       ref={sidebarRef}
-      className={`w-48 h-full bg-background-1 flex flex-col overflow-y-auto sidebar-scroll ${isScrolling ? 'sidebar-scrolling' : ''}`}
+      className={`w-[200px] h-full bg-background-1 flex flex-col overflow-y-auto sidebar-scroll ${isScrolling ? 'sidebar-scrolling' : ''}`}
     >
       {/* ========== 导航菜单内容区 ========== */}
       {/* 位置：侧边栏顶部，占据主要空间 */}

@@ -31,7 +31,7 @@ const TopBar: React.FC = () => {
     // ========== 顶部栏容器 ==========
     // 位置：页面最顶部，固定定位，层级 z-20
     // 样式：水平布局，左右对齐，底部边框分隔
-    <header className="sticky top-0 z-20 p-5 flex items-center justify-between py-3 border-b border-black-10 bg-background-1">
+    <header className="sticky top-0 z-20 p-5 flex items-center justify-between py-3 bg-background-1">
       {/* ========== 左侧：Logo 和标题区块 ========== */}
       {/* 位置：顶部栏左侧 */}
       {/* 包含：SnowUI Logo 图标、网站标题、副标题 */}

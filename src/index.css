@@ -1,7 +1,7 @@
 /* 你的最终覆盖层 */
 
 @import "tailwindcss";
-@import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';
+@import "./styles/snowui.css";
 
 /* 告诉 Tailwind v4 要扫描哪些文件（路径相对于项目根目录） */
 @source "./src/**/*.{js,jsx,ts,tsx}";

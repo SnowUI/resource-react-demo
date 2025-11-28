@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             <h2 className="text-lg leading-7 font-semibold text-foreground mb-4">
               {t('home.avatars', language)}
             </h2>
-            <div className="flex w-28 h-28 items-center justify-center p-6 bg-background-1 rounded-xl">
+            <div className="flex w-[120px] h-[120px] items-center justify-center p-6 bg-background-1 rounded-xl">
               <AvatarByewind size={256} className="rounded-full" />
             </div>
           </div>
