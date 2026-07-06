@@ -215,4 +215,3 @@ import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';`}
 };
 
 export default Usage;
-

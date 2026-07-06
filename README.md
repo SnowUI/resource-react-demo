@@ -1,53 +1,62 @@
 # SnowUI Resource React Demo
 
-This project showcases the React bindings for the SnowUI Resource library. It renders a full catalog of icons, avatars, backgrounds, illustrations, and other design resources shipped inside `@snowui-design-system/resource-react`, along with usage documentation, live previews, and theme toggles.
+SnowUI React 资源展示站，用于验证 `@snowui-design-system/resource-react` 的图标、头像、背景、插画、图片、Logo，以及图标库切换能力。
 
-## Tech Stack
+仓库：[SnowUI/resource-react-demo](https://github.com/SnowUI/resource-react-demo)
 
-- [React 19](https://react.dev/) with functional components and hooks.
-- [React Router](https://reactrouter.com/) (HashRouter) for in-browser navigation without a backend.
-- [Vite](https://vitejs.dev/) for development/build tooling (`pnpm run dev` / `pnpm run build`).
-- [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha) layered on top of SnowUI’s design tokens.
-- [SnowUI Resource React](https://www.npmjs.com/package/@snowui-design-system/resource-react) for all assets.
+## 技术栈
 
-## Getting Started
+- React 19
+- React Router HashRouter
+- Vite
+- Tailwind CSS v4
+- `@snowui-design-system/resource-react`
+- SnowUI CSS CDN：`https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css`
+
+## 开发
 
 ```bash
 pnpm install
-pnpm run dev   # http://localhost:5173
-pnpm run build # outputs to docs/ for GitHub Pages
+pnpm run dev
+pnpm run build
 pnpm run preview
 ```
 
-The project is configured to deploy via GitHub Pages using the `docs/` directory. Running `pnpm run build` automatically copies `docs/index.html` to `docs/404.html` to support deep links when using `HashRouter`.
+`pnpm run build` 输出到 `docs/`，并复制 `docs/index.html` 到 `docs/404.html`，用于 GitHub Pages 的 HashRouter 访问。
 
-## SnowUI CSS
+## 图标库切换验证
 
-The demo imports the global token sheet from the CDN:
+Demo 应覆盖两类用法：
 
-```css
-@import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';
+```tsx
+import { FourLeafClover, Icon, IconProvider } from "@snowui-design-system/resource-react";
+
+<FourLeafClover size={24} />
+
+<IconProvider collection="phosphor" fallbackCollections={["snowui"]}>
+  <Icon name="arrow-line-right" />
+</IconProvider>
 ```
 
-Include the same URL in your own apps (HTML `<link>`, CSS `@import`, or JS import) to use the design tokens and theme classes described on the Usage page.
+直接组件模式验证兼容性；`Icon + IconProvider` 验证 `usageName` 在 SnowUI / Phosphor / 未来 Iconify collection 之间切换时页面代码不变。
 
-## Project Structure
+## 发布与同步
 
-- `src/App.tsx` – application shell, routing, layout.
-- `src/components/*` – layout pieces like sidebar and top bar.
-- `src/pages/*` – Home, Categories, and Usage pages.
-- `src/context/ThemeContext.tsx` – theme/language state + HTML class syncing.
-- `src/i18n/locales.ts` – simple locale store and translation helper.
+本项目是展示站，不发布到 npm，只构建并同步 GitHub：
 
-## Deployment Notes
+```bash
+/Users/yuan/Project/snowui/scripts/publish-and-sync.sh --target resource-react-demo --message "chore: update resource react demo" --yes
+```
 
-- Vite’s `base` is set to `./` and the router uses HashRouter, so the app works under any subdirectory on GitHub Pages.
-- The build step writes hashed assets into `docs/static/`; push the entire `docs/` folder to GitHub to publish updates.
+如需只看动作：
 
-## Resources
+```bash
+/Users/yuan/Project/snowui/scripts/publish-and-sync.sh --target resource-react-demo --dry-run
+```
 
-- SnowUI base assets: <https://github.com/SnowUI/resource-base>
-- Live CDN tokens: <https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css>
+## 维护约定
 
-Feel free to file issues or feature requests in the relevant SnowUI repositories. PRs improving the demo are always welcome!
-
+- `package.json` 保持 `private: true`
+- 依赖 `@snowui-design-system/resource-react`
+- 展示站需要同步覆盖直接组件模式和通用图标模式
+- GitHub Pages 产物保留在 `docs/`
