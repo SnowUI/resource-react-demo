@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@snowui-design-system/resource-react':
-        specifier: ^1.0.23
-        version: 1.0.23(react@19.2.0)
+        specifier: ^1.0.25
+        version: 1.0.25(react@19.2.0)
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -430,11 +430,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@snowui-design-system/resource-base@1.0.23':
-    resolution: {integrity: sha512-cvTwbiaINpD/eYrv1esuj0YU0D0SfPEXXuIY0LPSvYbQgeb5j8E3RUHe+TUgGPPGEPbK6/KbxoYX07K5x9iArg==}
+  '@snowui-design-system/resource-base@1.0.26':
+    resolution: {integrity: sha512-psrOl1Co+6WlR+8LWdaX3auHE8VKA7whroYfl9KmHW8yO+yFr2lUwal9tADlbH7Wu1jBtuitikT+pFpKbmmtzQ==}
 
-  '@snowui-design-system/resource-react@1.0.23':
-    resolution: {integrity: sha512-3ihO//RbEm7CDA8jbBvQZpQ+LZrITBNGNE37vtPXwN4XeGNa0D8cW2MezkY7Gc09oP0Cn2F4wupLgmltebMrKg==}
+  '@snowui-design-system/resource-react@1.0.25':
+    resolution: {integrity: sha512-zVOqCzLPZDdCyLJjyDS01TykmnnopyYd4I3ohVhc91eF2HItItGZhmLyE1nnHotMJAS04w10i8ycSEeMSGrx+g==}
     peerDependencies:
       react: '>=18 <21'
 
@@ -1154,11 +1154,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.3':
     optional: true
 
-  '@snowui-design-system/resource-base@1.0.23': {}
+  '@snowui-design-system/resource-base@1.0.26': {}
 
-  '@snowui-design-system/resource-react@1.0.23(react@19.2.0)':
+  '@snowui-design-system/resource-react@1.0.25(react@19.2.0)':
     dependencies:
-      '@snowui-design-system/resource-base': 1.0.23
+      '@snowui-design-system/resource-base': 1.0.26
       react: 19.2.0
 
   '@tailwindcss/node@4.1.17':
