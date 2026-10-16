@@ -5,8 +5,8 @@
   "homepage": "/resource-demo-react",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && cp docs/index.html docs/404.html || true",
-    "build:skip-check": "vite build && cp docs/index.html docs/404.html || true",
+    "build": "tsc --noEmit && vite build && cp docs/index.html docs/404.html",
+    "build:skip-check": "vite build && cp docs/index.html docs/404.html",
     "preview": "vite preview",
     "start": "vite"
   },

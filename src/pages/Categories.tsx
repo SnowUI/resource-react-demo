@@ -1,10 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as AllComponents from '@snowui-design-system/resource-react';
-import {
-  icons,
-  componentNames,
-} from '@snowui-design-system/resource-react';
+import { componentNames } from '@snowui-design-system/resource-react';
 import { useTheme } from '../context/ThemeContext';
 import { t } from '../i18n/locales';
 
@@ -71,8 +68,18 @@ const emojiItems = createAssetItemsFromNames(componentNames.emoji);
 const cursorItems = createAssetItemsFromNames(componentNames.cursors);
 const illustrationItems = createAssetItemsFromNames(componentNames.illustrations);
 
-// 图标项：从 icons 对象（kebab-case key）创建，显示名称使用 PascalCase
-const iconItems: AssetItem[] = Object.entries(icons as Record<string, AssetComponent>)
+// 新版按 collection 暴露图标；保留对已发布旧版 icons 映射的兼容。
+const iconExports = AllComponents as unknown as {
+  icons?: Record<string, AssetComponent>;
+  iconsByCollection?: Record<string, Record<string, AssetComponent>>;
+};
+const collections = iconExports.iconsByCollection;
+const iconMap: Record<string, AssetComponent> = collections
+  ? Object.assign({}, ...Object.keys(collections).reverse().map((name) => collections[name]))
+  : (iconExports.icons ?? {});
+
+// 图标项：从 kebab-case 使用名创建，显示名称使用 PascalCase。
+const iconItems: AssetItem[] = Object.entries(iconMap)
   .map(([kebabName, Component]) => {
     // 将 kebab-case 转换为 PascalCase 作为显示名称（组件名称）
     const pascalName = kebabToPascal(kebabName);
