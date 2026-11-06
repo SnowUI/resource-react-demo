@@ -173,13 +173,13 @@ const Usage: React.FC = () => {
               <code className="text-sm leading-5 text-foreground font-mono whitespace-pre">
 {`// Option 1: CDN in HTML (Recommended)
 <link rel="stylesheet" 
-  href="https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css">
+  href="https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css">
 
 // Option 2: In your CSS file
-@import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';
+@import 'https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css';
 
 // Option 3: In JavaScript/TypeScript
-import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';`}
+import 'https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css';`}
               </code>
             </div>
           </section>
