@@ -1,9 +1,27 @@
-# resource-react-demo 项目规则
+<!-- AI-CONTRACT: tier=L1 | id=snowui-resource-react-demo | scope=snowui/resource-react-demo -->
+# SnowUI Resource React Demo 仓库规则（L1）
 
-## 本机维护阅读顺序
+读者：在 `snowui/resource-react-demo` 工作的维护者与 AI。本内部私有仓库提供 `@snowui-design-system/resource-react` 全量资源分类浏览、主题切换与用法演示应用。
 
-在本机 Project 工作区处理任何本项目任务，必须先读 `Project/AGENTS.md`（本机相对路径 `../../AGENTS.md`），再读 `SnowUI/AGENTS.md`（本机相对路径 `../AGENTS.md`）、本文件及 [本项目文档](docs/README.md)。不能因当前目录是独立 Git 根而省略上层规则。上述跨仓库链接仅在完整本机工作区有效；独立检出进行官方维护而缺少上层规则时，先定位规则，不假称已读取。普通使用者从本仓库 README 与随附许可文件了解使用范围，不需要取得私人维护文档。
+## 红线与章节索引
 
-本机维护规范统一放 `docs/standards/`，操作说明放 `docs/operations/`，计划放 `docs/planning/`，追溯记录放 `docs/history/`；按需创建，不建立平行 `specs/` 或 `doc/`。跨项目通用规则回到 Project，SnowUI 共同规则回到 SnowUI 根，单组件 API 仍随源码维护。
+- `[RRD-READ-01]` 必读顺序：[Project/AGENTS.md](../../AGENTS.md) → [snowui/AGENTS.md](../AGENTS.md) → 本文件 → 命中专题 → §1
+- `[RRD-DOCS-DIR]` 本仓 `docs/` 目录为静态站点构建输出目录（含 `index.html`、`manifest.json`、`static/`），严禁放入无正文文档空壳页或手改构建产物 → §2
+- `[RRD-GATE-TEST]` 未收到 Owner 验收指令严禁运行测试套件；私有根 [README.md](README.md) 保持 ≤ 5 行中文指针 → §2
 
-本项目负责React 资源演示。本机官方维护时沿 SnowUI 任务路由 `../docs/TaskRoutes.md` 读取命中规范，再读本项目 README 和实际调用链；不复制共享规范正文。测试与发布按上层规则及当前授权执行。
+## 1. 启动阅读链与一跳路由
+
+开始任何任务前，先完成 `[Project/AGENTS.md](../../AGENTS.md) → [snowui/AGENTS.md](../AGENTS.md) → 本文件`（独立检出缺少上层规则时先说明缺口，不假称已读取），再按意图一跳直达：
+
+| 任务意图 | 本仓与共享权威落点 |
+| --- | --- |
+| 应用入口、主题上下文与国际化 | [src/index.tsx](src/index.tsx) · [src/App.tsx](src/App.tsx) · [src/context/ThemeContext.tsx](src/context/ThemeContext.tsx) · [src/i18n/locales.ts](src/i18n/locales.ts) |
+| 首页、分类浏览与用法页面 | [src/pages/Home.tsx](src/pages/Home.tsx) · [src/pages/Categories.tsx](src/pages/Categories.tsx) · [src/pages/Usage.tsx](src/pages/Usage.tsx) |
+| 导航壳层与构建配置 | [src/components/TopBar.tsx](src/components/TopBar.tsx) · [src/components/Sidebar.tsx](src/components/Sidebar.tsx) · [package.json](package.json) · [vite.config.ts](vite.config.ts) |
+| 上游 React 资源包与样式规范 | [../resource-react/AGENTS.md](../resource-react/AGENTS.md) · [../resource-base/AGENTS.md](../resource-base/AGENTS.md) · [StyleSpec.md](../docs/standards/StyleSpec.md) |
+
+## 2. 仓库职责与维护边界
+
+1. **纯消费演示与构建目录隔离**：页面统一从 `@snowui-design-system/resource-react` 公开导出读取图标与素材；`docs/` 仅承载 `vite build` 静态预览产物，如需记录内部计划或任务日志统一归入 `../docs/`。
+2. **语言与路径纪律**：源码注释统一使用英文，不写入本机私有路径；根 [README.md](README.md) 保持指向本文件的中文极简指针。
+3. **开发与验收节奏**：本地预览使用 `pnpm dev`、静态构建使用 `pnpm build`；测试门禁仅在 Owner 下达验收指令后运行。

@@ -1,12 +1,3 @@
 # SnowUI Resource React Demo
 
-A React application for browsing assets provided by `@snowui-design-system/resource-react`.
-
-## Run locally
-
-```sh
-pnpm install
-pnpm dev
-```
-
-Run `pnpm build` to build the application and `pnpm preview` to preview the build.
+`@snowui-design-system/resource-react` 资源浏览与消费演示应用（内部私有仓库）。项目规则、开发命令与路由入口见 [AGENTS.md](AGENTS.md)。
