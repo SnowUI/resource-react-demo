@@ -11,7 +11,7 @@
 
 ## 1. 启动阅读链与一跳路由
 
-开始任何任务前，先完成 `[Project/AGENTS.md](../../AGENTS.md) → [snowui/AGENTS.md](../AGENTS.md) → 本文件`（独立检出缺少上层规则时先说明缺口，不假称已读取），再按意图一跳直达：
+开始任何任务前，先完成 `[Project/AGENTS.md](../../AGENTS.md) → [snowui/AGENTS.md](../AGENTS.md) → 本文件` 并运行 `node ../../brain/bin/brain.mjs intake --project resource-react-demo --q "<需求词>"`（收尾运行 `brain.mjs done --project snowui ...` 与 `brain.mjs impact snowui`；独立检出缺上层时先说明缺口），再按意图一跳直达：
 
 | 任务意图 | 本仓与共享权威落点 |
 | --- | --- |
@@ -22,6 +22,6 @@
 
 ## 2. 仓库职责与维护边界
 
-1. **纯消费演示与构建目录隔离**：页面统一从 `@snowui-design-system/resource-react` 公开导出读取图标与素材；`docs/` 仅承载 `vite build` 静态预览产物，如需记录内部计划或任务日志统一归入 `../docs/`。
+1. **纯消费演示与构建目录隔离**：页面统一从 `@snowui-design-system/resource-react` 公开导出读取图标与素材；`docs/` 仅承载 `vite build` 静态预览产物，计划与任务记录统一归入 `../../brain/`。
 2. **语言与路径纪律**：源码注释统一使用英文，不写入本机私有路径；根 [README.md](README.md) 保持指向本文件的中文极简指针。
 3. **开发与验收节奏**：本地预览使用 `pnpm dev`、静态构建使用 `pnpm build`；测试门禁仅在 Owner 下达验收指令后运行。
