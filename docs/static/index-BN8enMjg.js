@@ -103,13 +103,13 @@ Error generating stack: `+i.message+`
 <!-- Dark mode, iOS theme -->
 <html class="theme-ios-dark">`})}),y.jsx("div",{className:"mt-4 p-4 rounded-xl bg-background-1",children:y.jsx("code",{className:"text-sm leading-5 text-foreground font-mono whitespace-pre",children:`// Option 1: CDN in HTML (Recommended)
 <link rel="stylesheet" 
-  href="https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css">
+  href="https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css">
 
 // Option 2: In your CSS file
-@import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';
+@import 'https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css';
 
 // Option 3: In JavaScript/TypeScript
-import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';`})})]}),y.jsxs("section",{className:"p-6 rounded-2xl bg-background-2",children:[y.jsx("h2",{className:"text-lg leading-7 font-semibold text-foreground mb-1",children:"CSS Variables"}),y.jsx("p",{className:"text-sm leading-5 text-foreground mb-4",children:"All design tokens are available as CSS variables. Use them in your styles:"}),y.jsx("div",{className:"p-4 rounded-xl bg-background-1",children:y.jsx("code",{className:"text-sm leading-5 text-foreground font-mono whitespace-pre",children:`.my-component {
+import 'https://cdn.jsdelivr.net/gh/SnowUI/styles@main/snowui.css';`})})]}),y.jsxs("section",{className:"p-6 rounded-2xl bg-background-2",children:[y.jsx("h2",{className:"text-lg leading-7 font-semibold text-foreground mb-1",children:"CSS Variables"}),y.jsx("p",{className:"text-sm leading-5 text-foreground mb-4",children:"All design tokens are available as CSS variables. Use them in your styles:"}),y.jsx("div",{className:"p-4 rounded-xl bg-background-1",children:y.jsx("code",{className:"text-sm leading-5 text-foreground font-mono whitespace-pre",children:`.my-component {
   background-color: var(--background-1);
   color: var(--foreground);
   padding: var(--spacing-16);
@@ -117,4 +117,4 @@ import 'https://cdn.jsdelivr.net/gh/SnowUI/home@main/snowui.css';`})})]}),y.jsxs
   font-size: var(--font-size-16);
   line-height: var(--line-height-16);
 }`})})]})]})]})})};function Tn2(){return y.jsx(cC5,{children:y.jsx(oC5,{children:y.jsxs("div",{className:"flex flex-col h-screen bg-background-1 overflow-hidden",children:[y.jsx(Bn2,{}),y.jsxs("div",{className:"flex flex-1 overflow-hidden min-h-0",children:[y.jsx(Cn2,{}),y.jsx("main",{className:"flex-1 overflow-y-auto",children:y.jsxs($M5,{children:[y.jsx(kP,{path:"/",element:y.jsx(Hn2,{})}),y.jsx(kP,{path:"/assets/:category",element:y.jsx(Gn2,{})}),y.jsx(kP,{path:"/usage",element:y.jsx(qn2,{})})]})})]})]})})})}const _n2=document.getElementById("root"),On2=AM5.createRoot(_n2);On2.render(y.jsx(yX.StrictMode,{children:y.jsx(Tn2,{})}));
-//# sourceMappingURL=index-V_6GuG3b.js.map
+//# sourceMappingURL=index-BN8enMjg.js.map
